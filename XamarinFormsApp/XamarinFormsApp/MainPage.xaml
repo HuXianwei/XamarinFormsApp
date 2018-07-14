@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:XamarinFormsApp"
              x:Class="XamarinFormsApp.MainPage">
 
+    
+    
     <ListView x:Name="ListView" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>

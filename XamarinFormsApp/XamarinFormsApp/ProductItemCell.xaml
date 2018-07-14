@@ -53,9 +53,7 @@
             <StackLayout Orientation="Horizontal"
                 Grid.Row="1">
                 <Label Text="规格：" />
-                <StackLayout >
-                    
-                </StackLayout>
+                <local:BoxLabelView Name="测试SKU" />
             </StackLayout>
             
         </Grid>
