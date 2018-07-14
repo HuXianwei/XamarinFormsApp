@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:local="clr-namespace:XamarinFormsApp"
+          x:Class="XamarinFormsApp.ProductItemCell">
+    <ViewCell.View>
+        <Grid VerticalOptions="FillAndExpand"
+              Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid 
+                         Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <local:CheckBox Grid.Column="0" />
+                <Image Source="https://www.xamarin.com/content/images/pages/branding/assets/xamagon.png"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Grid.Column="1"></Image>
+                <StackLayout Orientation="Vertical"
+                             Grid.Column="2">
+                    <Label Text="{Binding ProductInfo.Name}"
+                                TextColor="#f35e20" />
+                    <Label Text="{Binding ProductInfo.Subhead}"
+                                TextColor="#503026" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand"
+                             Grid.Column="3">
+                    <Label Text="{Binding ProductInfo.Detail}" />
+                    <Label Text="查看详情" TextColor="Blue" />
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Orientation="Horizontal"
+                Grid.Row="1">
+                <Label Text="规格：" />
+                <StackLayout >
+                    
+                </StackLayout>
+            </StackLayout>
+            
+        </Grid>
+    </ViewCell.View>
+</ViewCell>
