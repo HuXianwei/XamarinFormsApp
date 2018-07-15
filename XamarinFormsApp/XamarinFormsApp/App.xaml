@@ -3,6 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsApp.App">
 	<Application.Resources>
-    
-	</Application.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="BoxLabelTemplate">
+                <StackLayout Orientation="Vertical">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.Column="0" Color="Orange"/>
+                    <ContentPresenter Grid.Column="0"  />
+                </Grid>
+                </StackLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

@@ -279,7 +279,7 @@ namespace XamarinFormsApp
             {
                 WidthRequest = this.Size,
                 HeightRequest = this.Size,
-                Source = this.OnImg
+                Source = this.OffImg
             };
             this.Icon.SetValue(Grid.ColumnProperty, 0);
             this.Grid.Children.Add(this.Icon);

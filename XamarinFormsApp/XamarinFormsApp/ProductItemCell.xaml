@@ -10,7 +10,6 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -49,13 +48,68 @@
                     <Label Text="查看详情" TextColor="Blue" />
                 </StackLayout>
             </Grid>
-
-            <StackLayout Orientation="Horizontal"
+            
+            <!--<StackLayout Orientation="Horizontal"
                 Grid.Row="1">
                 <Label Text="规格：" />
-                <StackLayout >
-                    
-                </StackLayout>
+                <local:BoxLabelView Text="柠檬味啊啊啊啊啊啊"/>
+                <local:BoxLabelView Text="草莓味"/>
+                <local:BoxLabelView Text="青柠味"/>
+                <local:BoxLabelView Text="西瓜味"/>
+                <local:BoxLabelView Text="柠檬味"/>
+                <local:BoxLabelView Text="西瓜味"/>
+                <local:BoxLabelView Text="柠檬味"/>
+            </StackLayout>-->
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+                <Label HorizontalTextAlignment="Start" Text="规格：" />
+                <Frame OutlineColor="Gray"
+                       HasShadow="False"
+                       Padding="2">
+                    <Label Text="柠檬味" />
+                </Frame>
+                <Frame OutlineColor="OrangeRed"
+                       BackgroundColor="Orange"
+                       Padding="2">
+                    <Label Text="草莓味" />
+                </Frame>
+                <Frame OutlineColor="OrangeRed"
+                       BackgroundColor="Orange"
+                       Padding="2">
+                    <Label Text="青柠味" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <ListView x:Name="SkuList" HasUnevenRows="True" ItemsSource="{Binding ProductInfo.Skus}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical" Spacing="0">
+                                        <Label Text="{Binding Name}"></Label>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="库存"></Label>
+                                            <Label Text="{Binding Quantity}"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="单价"></Label>
+                                            <Label Text="{Binding Price}"></Label>
+                                        </StackLayout>
+                                        <Label Text="数量每满1即增：中云南山泉550ml[饮用水](1*24)件*1"></Label>
+                                    </StackLayout>
+                                    
+                                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                        <Stepper x:Name="stepper"
+                                             Minimum="0"
+                                             Maximum="10"
+                                             Increment="1"
+                                                 Scale="0.5" />       
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
             
         </Grid>

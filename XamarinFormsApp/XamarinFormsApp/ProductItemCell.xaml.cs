@@ -17,13 +17,14 @@ namespace XamarinFormsApp
 		public ProductItemCell()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = this;
+        }
 
         public static readonly BindableProperty ProductInfoProperty =
             BindableProperty.Create("ProductInfo", typeof(ProductInfo), typeof(ProductItemCell), new ProductInfo());
 
-        public static readonly BindableProperty HistoryBuyCountModelProperty =
-            BindableProperty.Create("HistoryBuyCountModel", typeof(HistoryBuyCountModel), typeof(ProductItemCell), new HistoryBuyCountModel());
+        public static readonly BindableProperty HistoryBuyCountListProperty =
+            BindableProperty.Create("HistoryBuyCountList", typeof(List<HistoryBuyCountModel>), typeof(ProductItemCell), new List<HistoryBuyCountModel>());
 
         public ProductInfo ProductInfo
         {
@@ -31,10 +32,10 @@ namespace XamarinFormsApp
             set { SetValue(ProductInfoProperty, value); }
         }
 
-        public HistoryBuyCountModel HistoryBuyCountModel
+        public List<HistoryBuyCountModel> HistoryBuyCountList
         {
-            get { return (HistoryBuyCountModel)GetValue(HistoryBuyCountModelProperty); }
-            set { SetValue(HistoryBuyCountModelProperty, value); }
+            get { return (List<HistoryBuyCountModel>)GetValue(HistoryBuyCountListProperty); }
+            set { SetValue(HistoryBuyCountListProperty, value); }
         }
     }
 }
