@@ -9,7 +9,7 @@
     <ListView x:Name="ListView" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <local:ProductItemCell ProductInfo="{Binding ProductInfo}" HistoryBuyCountModel="{Binding HistoryBuyCountModel}" />
+                <local:ProductItemCell ProductInfo="{Binding ProductInfo}" HistoryBuyCountList="{Binding HistoryBuyCountList}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

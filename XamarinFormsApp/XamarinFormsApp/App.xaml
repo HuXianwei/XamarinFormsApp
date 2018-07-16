@@ -2,29 +2,21 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFormsApp.App">
-    <Application.Resources>
+	<Application.Resources>
         <ResourceDictionary>
-            <ControlTemplate x:Key="BoxLabelSelectedTemplate">
-                <Grid BackgroundColor="Orange">
+            <ControlTemplate x:Key="BoxLabelTemplate">
+                <StackLayout Orientation="Vertical">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <ContentPresenter />
+                    <BoxView Grid.Column="0" Color="Orange"/>
+                    <ContentPresenter Grid.Column="0"  />
                 </Grid>
-            </ControlTemplate>
-            <ControlTemplate x:Key="BoxLabelUnSelectedTemplate">
-                <Grid BackgroundColor="White">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="20"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <ContentPresenter />
-                </Grid>
+                </StackLayout>
             </ControlTemplate>
         </ResourceDictionary>
     </Application.Resources>

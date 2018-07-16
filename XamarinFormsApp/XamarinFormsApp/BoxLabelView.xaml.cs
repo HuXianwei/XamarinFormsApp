@@ -15,15 +15,16 @@ namespace XamarinFormsApp
 		public BoxLabelView ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = this;
+        }
 
-        public static readonly BindableProperty NameProperty =
-            BindableProperty.Create("Name", typeof(string), typeof(BoxLabelView), "sku");
+        public static readonly BindableProperty TextProperty =
+            BindableProperty.Create(nameof(Text), typeof(string), typeof(BoxLabelView), default(string));
 
-        public string Name
+        public string Text
         {
-            get { return (string)GetValue(NameProperty); }
-            set { SetValue(NameProperty, value); }
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
         }
     }
 }
